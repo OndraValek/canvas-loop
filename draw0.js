@@ -41,17 +41,20 @@ document.addEventListener('keydown', function(event) {
     case "KeyE":
         randomEllipse();
         break;
+    case "KeyL":
+        drawRandomTriangle(canvas);
+        break;
+    case "KeyK":
+      drawRandomCross(canvas);
+        break;
+    case "KeyP":
+      drawRandomLines(canvas);
+        break;
     case "KeyT":
         drawTarget(10,20);
         break;
     case "KeyR":
         recursiveTarget(10,20);
-        break;
-    case "Key":
-        draw();
-        break;
-        case "KeyL":
-        drawRandomLines(100,200);
         break;
     }
 });
@@ -80,25 +83,6 @@ function recursiveTarget(circles=10,gap=20){
     }
 }
 
-function drawKriz() {
-    ctx.line
-}
-
-function drawTrojuhelnik(){
-    
-}
-/*
-function drawLines(x,y,count=10,gap=15){
-    ctx.strokeStyle='blue';
-    for(let i =0; i < count; i++){
-        ctx.lineWidth=i+1;
-        ctx.beginPath()
-        ctx.moveTo(x,y+i*gap);
-        ctx.lineTo(x+100,y+i*gap);
-        ctx.stroke();
-    }
-}
-*/
 function getRandomColor() {
     const letters = '0123456789ABCDEF';
     let color = '#';
@@ -127,15 +111,6 @@ function getRandomColor() {
       ctx.stroke();
     }
   }
-
- /* function getRandomColor() {
-    const letters = '0123456789ABCDEF';
-    let color = '#';
-    for (let i = 0; i < 6; i++) {
-      color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
-  }*/
   
   function drawRandomTriangle(canvas) {
     const ctx = canvas.getContext('2d');
@@ -155,16 +130,6 @@ function getRandomColor() {
     ctx.closePath();
     ctx.fill();
   }
-  
-  
- /* function getRandomColor() {
-    const letters = '0123456789ABCDEF';
-    let color = '#';
-    for (let i = 0; i = 0.2;) {
-      color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
-  }*/
   
   function drawRandomCross(canvas) {
     const ctx = canvas.getContext('2d');
@@ -187,29 +152,12 @@ function getRandomColor() {
     ctx.stroke();
   }
   
-  
-  
-  document.addEventListener('keydown', function (event) {
-    if (event.key === 'k' || event.key === 'K') { // Reagovat na stisk klávesy "k" nebo "K"
-      drawRandomCross(canvas);
-    }
-  });
-  
-  document.addEventListener('keydown', function (event) {
+  /*document.addEventListener('keydown', function (event) {
     if (event.key === 'l') { // Reagovat na stisk klávesy "L" nebo "l"
       drawRandomTriangle(canvas);
     }
-  });
+  });*/
   
-  document.addEventListener('keydown', function (event) {
-    if (event.key === 'Enter') { // Reagovat na stisk Enter
-      drawRandomLines(canvas);
-    }
-
-  });
-
-  
-
 // Funkce pro vykreslení obdélníka na plátno s danými parametry
 function drawRectangle(x, y, w, h, col) {
     // Nastavení barvy výplně pro obdélník
